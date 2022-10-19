@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import { SimpleForm } from './components/Form';
 
-function App() {
+const useStyles = makeStyles({
+  root: {
+    margin: 'auto',
+    padding: 32,
+    maxWidth: 600,
+    backgroundColor: '#6887f53d',
+    boxShadow: '0 0 10px #0000002e',
+    position: 'relative',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    borderRadius: 8,
+  },
+});
+
+const App = () => {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box className={classes.root}>
+      <SimpleForm />
+    </Box>
   );
-}
+};
 
 export default App;
